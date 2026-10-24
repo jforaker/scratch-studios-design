@@ -24,11 +24,6 @@ The design system for Scratch Studios' four instruments: SS-01 Break, SS-02 Trac
 4. Bump `version` in `package.json`, merge, and tag the release to match (`v1.6.0`).
 5. In each app, bump the `@scratch-studios/design` dependency to the new tag.
 
-## Changelog
-- **1.6.0**: SS-04 Gauge lands in the source. `gauge-accent`, `gauge-selection` and `gauge-chart-fill` added to `tokens.json` (v4), so both exports now carry them; in v1.5.0 the React Native `instruments` map pointed at colors that didn't exist. Gauge icons in `icons/gauge/`, recolored to system values. Docs cover Gauge, quota verdicts and menu-bar items. No existing values changed.
-- **1.5.0**: `gauge` instrument and `quotaVerdict()` in the generator.
-- **1.4.0**: Swift export.
-
 ## Fonts
 The fonts are bundled in each app, not here. All three are under the SIL Open Font License, from the google/fonts repo:
 - Barlow (Light, Regular, Medium)
