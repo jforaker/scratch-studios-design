@@ -1,0 +1,21 @@
+<!-- @dsCard group="Controls" height=160 subtitle="Place picker" -->
+<div id="root">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Cutive+Mono&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+  body{margin:0;background:var(--ground)}
+  .pair{display:grid;grid-template-columns:1fr 1fr}
+  .pane{background:var(--ground);color:var(--ink);font-family:var(--font-grotesk,"Barlow",system-ui,sans-serif);min-width:0}
+  .head{display:flex;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--rule)}
+  .lbl{font-family:var(--font-mono,"IBM Plex Mono",monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--label)}
+  .break{--acc:var(--nominal);--sel:var(--nominal-selection);--fill:var(--nominal-chart-fill)}
+  .trace{--acc:var(--phosphor);--sel:var(--phosphor-selection);--fill:var(--phosphor-chart-fill)}
+  .scratch{--acc:var(--scratch-accent);--sel:var(--scratch-selection);--fill:var(--scratch-chart-fill)}
+  .mono{font-family:var(--font-mono,"IBM Plex Mono",monospace)}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+
+</style>
+<div class="pair"><div class="pane break" data-theme="light"><div class="head"><span class="lbl">Place & pills</span><span class="lbl">Break · Paper</span></div><div style="padding:16px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;letter-spacing:.14em">STEAMER LANE</span><span class="lbl">Santa Cruz, CA</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 18px"><span style="height:38px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;background:var(--ink);color:var(--ground);font-size:13px;font-weight:500;letter-spacing:.06em">STEAMER LANE</span><span style="height:38px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid var(--rule-strong);font-size:13px;font-weight:500;letter-spacing:.06em">COWELL’S</span><span style="height:38px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid var(--rule-strong);font-size:13px;font-weight:500;letter-spacing:.06em">PLEASURE POINT</span></div></div><div class="pane break" data-theme="dark"><div class="head"><span class="lbl">Place & pills</span><span class="lbl">Break · Night</span></div><div style="padding:16px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:18px;font-weight:500;letter-spacing:.14em">STEAMER LANE</span><span class="lbl">Santa Cruz, CA</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 18px"><span style="height:38px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;background:var(--ink);color:var(--ground);font-size:13px;font-weight:500;letter-spacing:.06em">STEAMER LANE</span><span style="height:38px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid var(--rule-strong);font-size:13px;font-weight:500;letter-spacing:.06em">COWELL’S</span><span style="height:38px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid var(--rule-strong);font-size:13px;font-weight:500;letter-spacing:.06em">PLEASURE POINT</span></div></div></div>
+</div>
+<script>/* static preview */</script>

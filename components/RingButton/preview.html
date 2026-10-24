@@ -1,0 +1,27 @@
+<!-- @dsCard group="Actions" height=240 subtitle="Start, stop, secondary, link, destructive" -->
+<div id="root">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Cutive+Mono&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+  body{margin:0;background:var(--ground)}
+  .pair{display:grid;grid-template-columns:1fr 1fr}
+  .pane{background:var(--ground);color:var(--ink);font-family:var(--font-grotesk,"Barlow",system-ui,sans-serif);min-width:0}
+  .head{display:flex;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--rule)}
+  .lbl{font-family:var(--font-mono,"IBM Plex Mono",monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--label)}
+  .break{--acc:var(--nominal);--sel:var(--nominal-selection);--fill:var(--nominal-chart-fill)}
+  .trace{--acc:var(--phosphor);--sel:var(--phosphor-selection);--fill:var(--phosphor-chart-fill)}
+  .scratch{--acc:var(--scratch-accent);--sel:var(--scratch-selection);--fill:var(--scratch-chart-fill)}
+  .mono{font-family:var(--font-mono,"IBM Plex Mono",monospace)}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+
+</style>
+<div class="pair"><div class="pane trace" data-theme="light"><div class="head"><span class="lbl">Actions</span><span class="lbl">Trace · Paper</span></div><div style="padding:18px 20px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;align-items:center;gap:16px"><span style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center"><span class="dot" style="width:7px;height:7px;background:var(--acc)"></span></span><span class="mono" style="font-size:12px;letter-spacing:.3em;text-transform:uppercase">Take reading</span></div>
+<div style="display:flex;align-items:center;gap:16px"><span style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--clay);display:grid;place-items:center"><span class="dot" style="width:7px;height:7px;background:var(--ink)"></span></span><span class="mono" style="font-size:12px;letter-spacing:.3em;text-transform:uppercase">Stop reading</span></div>
+<div style="height:1px;background:var(--rule)"></div>
+<div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="height:32px;padding:0 14px;display:inline-flex;align-items:center;border:1px solid var(--rule-strong);border-radius:var(--radius-md,7px);font-size:13px;font-weight:500">Export readings</span><span style="font-size:13px;text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:4px">View history</span><span style="font-size:13px;color:var(--clay)">Delete all readings</span></div></div></div><div class="pane trace" data-theme="dark"><div class="head"><span class="lbl">Actions</span><span class="lbl">Trace · Night</span></div><div style="padding:18px 20px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;align-items:center;gap:16px"><span style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center"><span class="dot" style="width:7px;height:7px;background:var(--acc)"></span></span><span class="mono" style="font-size:12px;letter-spacing:.3em;text-transform:uppercase">Take reading</span></div>
+<div style="display:flex;align-items:center;gap:16px"><span style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--clay);display:grid;place-items:center"><span class="dot" style="width:7px;height:7px;background:var(--ink)"></span></span><span class="mono" style="font-size:12px;letter-spacing:.3em;text-transform:uppercase">Stop reading</span></div>
+<div style="height:1px;background:var(--rule)"></div>
+<div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="height:32px;padding:0 14px;display:inline-flex;align-items:center;border:1px solid var(--rule-strong);border-radius:var(--radius-md,7px);font-size:13px;font-weight:500">Export readings</span><span style="font-size:13px;text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:4px">View history</span><span style="font-size:13px;color:var(--clay)">Delete all readings</span></div></div></div></div>
+</div>
+<script>/* static preview */</script>

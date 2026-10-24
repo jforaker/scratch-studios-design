@@ -1,0 +1,33 @@
+<!-- @dsCard group="Readings" height=210 subtitle="Trace, paper and night" -->
+<div id="root">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Cutive+Mono&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+  body{margin:0;background:var(--ground)}
+  .pair{display:grid;grid-template-columns:1fr 1fr}
+  .pane{background:var(--ground);color:var(--ink);font-family:var(--font-grotesk,"Barlow",system-ui,sans-serif);min-width:0}
+  .head{display:flex;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--rule)}
+  .lbl{font-family:var(--font-mono,"IBM Plex Mono",monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--label)}
+  .break{--acc:var(--nominal);--sel:var(--nominal-selection);--fill:var(--nominal-chart-fill)}
+  .trace{--acc:var(--phosphor);--sel:var(--phosphor-selection);--fill:var(--phosphor-chart-fill)}
+  .scratch{--acc:var(--scratch-accent);--sel:var(--scratch-selection);--fill:var(--scratch-chart-fill)}
+  .mono{font-family:var(--font-mono,"IBM Plex Mono",monospace)}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+
+</style>
+<div class="pair"><div class="pane trace" data-theme="light"><div class="head"><span class="lbl">Reading</span><span class="lbl">Trace · Paper</span></div><div style="display:flex;gap:16px;padding:18px 20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0"><span class="lbl">Download</span>
+<div style="display:flex;align-items:baseline;gap:8px"><span class="mono" style="font-weight:300;font-size:48px;line-height:1;letter-spacing:-.02em">369.8</span><span style="font-size:14px;color:var(--ink-soft)">Mbps</span></div></div>
+<div style="width:1px;background:var(--rule)"></div>
+<div style="flex:0 0 104px;display:flex;flex-direction:column;justify-content:space-between;gap:8px"><span class="lbl">Peak 381.2</span><svg width='104' height='30' viewBox='0 0 104 30' aria-hidden='true'><polyline points='0,24 10,24 20,23 30,23 40,21 48,19 56,11 66,10 78,10 90,9 104,10' fill='none' style='stroke:var(--acc)' stroke-width='1'/></svg></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)">
+<div style="padding:12px 20px;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--rule)"><span class="lbl">Upload</span><span><span class="mono" style="font-weight:300;font-size:26px">88.0</span> <span style="font-size:12px;color:var(--ink-soft)">Mbps</span></span></div>
+<div style="padding:12px 20px;display:flex;flex-direction:column;gap:6px"><span class="lbl">Latency</span><span><span class="mono" style="font-weight:300;font-size:26px">11</span> <span style="font-size:12px;color:var(--ink-soft)">ms</span></span></div></div></div><div class="pane trace" data-theme="dark"><div class="head"><span class="lbl">Reading</span><span class="lbl">Trace · Night</span></div><div style="display:flex;gap:16px;padding:18px 20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0"><span class="lbl">Download</span>
+<div style="display:flex;align-items:baseline;gap:8px"><span class="mono" style="font-weight:300;font-size:48px;line-height:1;letter-spacing:-.02em">369.8</span><span style="font-size:14px;color:var(--ink-soft)">Mbps</span></div></div>
+<div style="width:1px;background:var(--rule)"></div>
+<div style="flex:0 0 104px;display:flex;flex-direction:column;justify-content:space-between;gap:8px"><span class="lbl">Peak 381.2</span><svg width='104' height='30' viewBox='0 0 104 30' aria-hidden='true'><polyline points='0,24 10,24 20,23 30,23 40,21 48,19 56,11 66,10 78,10 90,9 104,10' fill='none' style='stroke:var(--acc)' stroke-width='1'/></svg></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)">
+<div style="padding:12px 20px;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--rule)"><span class="lbl">Upload</span><span><span class="mono" style="font-weight:300;font-size:26px">88.0</span> <span style="font-size:12px;color:var(--ink-soft)">Mbps</span></span></div>
+<div style="padding:12px 20px;display:flex;flex-direction:column;gap:6px"><span class="lbl">Latency</span><span><span class="mono" style="font-weight:300;font-size:26px">11</span> <span style="font-size:12px;color:var(--ink-soft)">ms</span></span></div></div></div></div>
+</div>
+<script>/* static preview */</script>
