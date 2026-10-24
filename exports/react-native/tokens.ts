@@ -120,6 +120,7 @@ export const instruments = {
   break: { model: 'SS-01', accent: 'nominal', selection: 'nominalSelection', chartFill: 'nominalChartFill' },
   trace: { model: 'SS-02', accent: 'phosphor', selection: 'phosphorSelection', chartFill: 'phosphorChartFill' },
   scratch: { model: 'SS-03', accent: 'scratchAccent', selection: 'scratchSelection', chartFill: 'scratchChartFill' },
+  gauge: { model: 'SS-04', accent: 'gaugeAccent', selection: 'gaugeSelection', chartFill: 'gaugeChartFill' },
 } as const satisfies Record<string, { model: string; accent: ColorToken; selection: ColorToken; chartFill: ColorToken }>;
 
 export type Instrument = keyof typeof instruments;
@@ -180,6 +181,14 @@ export const radius = {
 export const motion = { maxDuration: 160, easing: 'ease-out' } as const;
 
 /** Verdict levels, shared by every instrument. Good uses the instrument's own accent. */
+/** Quota-style readings (how much is left, as in Gauge): above 50% good, 20–50% fair, below 20% poor. */
+export const quotaThresholds = { fair: 50, poor: 20 } as const;
+export function quotaVerdict(percentLeft: number): 'good' | 'fair' | 'poor' {
+  if (percentLeft < quotaThresholds.poor) return 'poor';
+  if (percentLeft <= quotaThresholds.fair) return 'fair';
+  return 'good';
+}
+
 export function verdictColor(level: 'good' | 'fair' | 'poor', instrument: Instrument, c: ThemeColors): string {
   if (level === 'good') return c[instruments[instrument].accent];
   return level === 'fair' ? c.ochre : c.clay;
