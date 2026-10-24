@@ -79,7 +79,7 @@ Each instrument's icon rereads one familiar shape, built the same way:
 
 - **SS-01 Break: Peel.** Swell lines wrapping a point, peeling right. Graphite ground, chalk lines, `nominal` dot. Break uses this one icon in every appearance.
 - **SS-02 Trace: Signal.** Wifi arcs cut like a section drawing. Paper ground, graphite arcs. The dot should be `phosphor`.
-- **SS-03 Scratch:** not drawn yet.
+- **SS-03 Scratch: Stroke.** One quick stroke of ink on paper. It has no dot: the stroke is the mark.
 
 The files are in the App icons asset group.
 

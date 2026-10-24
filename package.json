@@ -1,0 +1,15 @@
+{
+  "name": "@scratch-studios/design",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scratch Studios design tokens and exports",
+  "main": "exports/react-native/tokens.ts",
+  "types": "exports/react-native/tokens.ts",
+  "exports": {
+    ".": "./exports/react-native/tokens.ts",
+    "./tokens.json": "./tokens/tokens.json",
+    "./*": "./*"
+  },
+  "files": ["tokens", "exports", "icons"],
+  "peerDependencies": { "react-native": "*" }
+}
