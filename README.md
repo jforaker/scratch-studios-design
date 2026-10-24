@@ -1,6 +1,6 @@
 # Scratch Studios Design
 
-The design system for Scratch Studios' three instruments: SS-01 Break, SS-02 Trace and SS-03 Scratch. Quiet, instrument-like software that looks like a well-made field notebook.
+The design system for Scratch Studios' four instruments: SS-01 Break, SS-02 Trace, SS-03 Scratch and SS-04 Gauge. Quiet, instrument-like software that looks like a well-made field notebook.
 
 ## What's here
 | Path | What |
@@ -12,13 +12,22 @@ The design system for Scratch Studios' three instruments: SS-01 Break, SS-02 Tra
 | `scripts/generate-tokens.py` | Regenerates the export from `tokens.json`. |
 | `icons/break/` | Break's Peel icon: the iOS 1024 icon, Icon Composer layers and Android mipmaps. |
 | `icons/trace/` | Trace's Signal icon (reference PNG). |
+| `icons/scratch/` | Scratch's Stroke icon. |
+| `icons/gauge/` | Gauge's Ticks icon: SVG and 1024 masters, the macOS iconset, and the menu-bar template glyph. |
 | `style-guide/index.html` | The editorial style guide as one self-contained page; the starting point for the studio homepage. |
 
 ## Changing a value
 1. Edit `tokens/tokens.json`.
 2. Run `python3 scripts/generate-tokens.py`.
-3. Copy `exports/react-native/tokens.ts` into each app as `app/src/styles/scratch-tokens.ts`, or add this repo as a git submodule or package and import it directly.
-4. Update `docs/design-system.md` if a rule changed.
+   This writes both `exports/react-native/tokens.ts` and `exports/swift/ScratchTokens.swift`. Never edit either by hand.
+3. Update `docs/design-system.md` if a rule changed.
+4. Bump `version` in `package.json`, merge, and tag the release to match (`v1.6.0`).
+5. In each app, bump the `@scratch-studios/design` dependency to the new tag.
+
+## Changelog
+- **1.6.0**: SS-04 Gauge lands in the source. `gauge-accent`, `gauge-selection` and `gauge-chart-fill` added to `tokens.json` (v4), so both exports now carry them; in v1.5.0 the React Native `instruments` map pointed at colors that didn't exist. Gauge icons in `icons/gauge/`, recolored to system values. Docs cover Gauge, quota verdicts and menu-bar items. No existing values changed.
+- **1.5.0**: `gauge` instrument and `quotaVerdict()` in the generator.
+- **1.4.0**: Swift export.
 
 ## Fonts
 The fonts are bundled in each app, not here. All three are under the SIL Open Font License, from the google/fonts repo:

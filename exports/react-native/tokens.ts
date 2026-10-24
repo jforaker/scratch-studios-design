@@ -1,6 +1,6 @@
 /**
  * Scratch Studios Design System — tokens for React Native.
- * Generated from tokens.json (v3). Do not edit by hand: change the design system, then regenerate.
+ * Generated from tokens.json (v4). Do not edit by hand: change the design system, then regenerate.
  *
  * Type: Barlow (grotesk), IBM Plex Mono (labels, Trace numerals), Cutive Mono (wordmarks only).
  * Paper is the light theme, Night the dark theme. Every color has a value for each.
@@ -51,6 +51,12 @@ export const colors = {
     scratchSelection: "#E6E8E7",
     /** Peak of the chart fade under a cyanotype line. */
     scratchChartFill: "#CED6D8",
+    /** Slate. Gauge's instrument accent: filled ticks when the verdict is good, the live dot, the status dot on the mark, and the menu-bar dot when nothing is low. 6.7:1 on paper, 8.4:1 on night. */
+    gaugeAccent: "#4A5866",
+    /** Selected or hovered row ground in Gauge. Never an edge highlight. */
+    gaugeSelection: "#E7E8E8",
+    /** Peak of the chart fade under a slate line. */
+    gaugeChartFill: "#D3D7DB",
     /** Ground of a marked span: Break's best window, Trace's test interval, a found match in Scratch. Always bounded by a rule-strong hairline at each edge; labels sit outside it. */
     window: "#E7E4DD",
     /** Verdict 'fair' in every instrument. 5.6:1 on paper, 6.5:1 on night. */
@@ -99,6 +105,12 @@ export const colors = {
     scratchSelection: "#202426",
     /** Peak of the chart fade under a cyanotype line. */
     scratchChartFill: "#2A3034",
+    /** Slate. Gauge's instrument accent: filled ticks when the verdict is good, the live dot, the status dot on the mark, and the menu-bar dot when nothing is low. 6.7:1 on paper, 8.4:1 on night. */
+    gaugeAccent: "#9AAFC6",
+    /** Selected or hovered row ground in Gauge. Never an edge highlight. */
+    gaugeSelection: "#212326",
+    /** Peak of the chart fade under a slate line. */
+    gaugeChartFill: "#2A2F34",
     /** Ground of a marked span: Break's best window, Trace's test interval, a found match in Scratch. Always bounded by a rule-strong hairline at each edge; labels sit outside it. */
     window: "#24221E",
     /** Verdict 'fair' in every instrument. 5.6:1 on paper, 6.5:1 on night. */
@@ -145,7 +157,7 @@ export const type = {
     numeralMono: { fontFamily: fontFaces.mono[300], fontSize: 56, lineHeight: 56, letterSpacing: -1.12 },
     /** Grotesk · Screen titles. */
     title: { fontFamily: fontFaces.grotesk[400], fontSize: 36, lineHeight: 41, letterSpacing: 0 },
-    /** Grotesk · Wordmarks only: Break, Trace, Scratch, Scratch Studios. Cutive Mono caps, tracked. Never in UI chrome. */
+    /** Grotesk · Wordmarks only: Break, Trace, Scratch, Gauge, Scratch Studios. Cutive Mono caps, tracked. Never in UI chrome. */
     mark: { fontFamily: fontFaces.mark[400], fontSize: 24, lineHeight: 24, letterSpacing: 10.08 },
     /** Grotesk · Place names and pills: Barlow Medium caps. */
     place: { fontFamily: fontFaces.grotesk[500], fontSize: 18, lineHeight: 22, letterSpacing: 2.52 },

@@ -1,5 +1,5 @@
 // Scratch Studios Design System — tokens for Swift (AppKit, UIKit, SwiftUI).
-// Generated from tokens.json (v3). Do not edit by hand: change the design system, then regenerate.
+// Generated from tokens.json (v4). Do not edit by hand: change the design system, then regenerate.
 //
 // Colors are dynamic: they resolve Paper or Night from the effective appearance.
 // To force a theme, set NSApp.appearance (macOS) or overrideUserInterfaceStyle (iOS)
@@ -113,6 +113,12 @@ public enum ScratchTokens {
     public static let scratchSelection = ScratchColor(ScratchRGBA(230, 232, 231, 1), ScratchRGBA(32, 36, 38, 1))
     /** Peak of the chart fade under a cyanotype line. */
     public static let scratchChartFill = ScratchColor(ScratchRGBA(206, 214, 216, 1), ScratchRGBA(42, 48, 52, 1))
+    /** Slate. Gauge's instrument accent: filled ticks when the verdict is good, the live dot, the status dot on the mark, and the menu-bar dot when nothing is low. 6.7:1 on paper, 8.4:1 on night. */
+    public static let gaugeAccent = ScratchColor(ScratchRGBA(74, 88, 102, 1), ScratchRGBA(154, 175, 198, 1))
+    /** Selected or hovered row ground in Gauge. Never an edge highlight. */
+    public static let gaugeSelection = ScratchColor(ScratchRGBA(231, 232, 232, 1), ScratchRGBA(33, 35, 38, 1))
+    /** Peak of the chart fade under a slate line. */
+    public static let gaugeChartFill = ScratchColor(ScratchRGBA(211, 215, 219, 1), ScratchRGBA(42, 47, 52, 1))
     /** Ground of a marked span: Break's best window, Trace's test interval, a found match in Scratch. Always bounded by a rule-strong hairline at each edge; labels sit outside it. */
     public static let window = ScratchColor(ScratchRGBA(231, 228, 221, 1), ScratchRGBA(36, 34, 30, 1))
     /** Verdict 'fair' in every instrument. 5.6:1 on paper, 6.5:1 on night. */
@@ -151,6 +157,9 @@ public enum ScratchTokens {
     @objc public static let scratchAccent: NSColor = ScratchTokens.scratchAccent.platform
     @objc public static let scratchSelection: NSColor = ScratchTokens.scratchSelection.platform
     @objc public static let scratchChartFill: NSColor = ScratchTokens.scratchChartFill.platform
+    @objc public static let gaugeAccent: NSColor = ScratchTokens.gaugeAccent.platform
+    @objc public static let gaugeSelection: NSColor = ScratchTokens.gaugeSelection.platform
+    @objc public static let gaugeChartFill: NSColor = ScratchTokens.gaugeChartFill.platform
     @objc public static let window: NSColor = ScratchTokens.window.platform
     @objc public static let ochre: NSColor = ScratchTokens.ochre.platform
     @objc public static let clay: NSColor = ScratchTokens.clay.platform
