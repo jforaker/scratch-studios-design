@@ -1,6 +1,6 @@
 {
   "name": "@scratch-studios/design",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Scratch Studios design tokens: React Native module and generated native exports.",
   "license": "UNLICENSED",
   "main": "index.ts",

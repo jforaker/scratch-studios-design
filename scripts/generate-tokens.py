@@ -115,3 +115,146 @@ export function useTokens(instrument: Instrument, override?: ThemeName) {{
 '''
 open(os.path.join(ROOT,'exports','react-native','tokens.ts'),'w').write(out)
 print(len(out))
+
+# ---------------------------------------------------------------------------
+# Native export: Swift (AppKit + UIKit + SwiftUI) from the same tokens.json.
+# ---------------------------------------------------------------------------
+def rgba(v):
+    v=v.strip()
+    if v.startswith('#'):
+        return int(v[1:3],16),int(v[3:5],16),int(v[5:7],16),1.0
+    m=re.match(r'rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\s*\)',v)
+    return int(m[1]),int(m[2]),int(m[3]),float(m[4] or 1)
+def sw(v):
+    r,g,b,a=rgba(v); return f"ScratchRGBA({r}, {g}, {b}, {num(a)})"
+def pair(x):
+    v=x['value']; return (v,v) if isinstance(v,str) else (v['light'],v['dark'])
+ccases='\n'.join(f"    /** {x['usage']} */\n    public static let {camel(x['name'])} = ScratchColor({sw(pair(x)[0])}, {sw(pair(x)[1])})" for x in toks)
+sw_styles=[]
+for g in t['type']['groups']:
+    for s in g['styles']:
+        fam=s.get('family',g['family']); fs=num(s['fontSize']); w=int(s['fontWeight'])
+        lh=s['lineHeight']; lh=round(float(lh)*fs) if not str(lh).endswith('px') else num(lh)
+        ls=s.get('letterSpacing'); ls=round(float(ls.replace('em',''))*fs,2) if ls else 0
+        sw_styles.append(f"    public static let {camel(s['name'])} = ScratchTextStyle(face: ScratchFonts.{fam}[{w}]!, size: {fs}, lineHeight: {lh}, tracking: {ls})")
+fam_sw='\n'.join(f"    public static let {k}: [Int: String] = [" + ', '.join(f"{w}: {q(n)}" for w,n in v.items()) + "]" for k,v in faces.items())
+sp_sw='\n'.join(f"    public static let s{x['name'].split('-')[1]}: CGFloat = {num(x['value'])} // {x['usage']}" for x in t['spacing']['tokens'])
+rd_sw='\n'.join(f"    public static let {x['name'].split('-')[1]}: CGFloat = {num(x['value'])} // {x['usage']}" for x in t['radius']['tokens'])
+swift=f'''// Scratch Studios Design System — tokens for Swift (AppKit, UIKit, SwiftUI).
+// Generated from tokens.json (v{t['version']}). Do not edit by hand: change the design system, then regenerate.
+//
+// Colors are dynamic: they resolve Paper or Night from the effective appearance.
+// To force a theme, set NSApp.appearance (macOS) or overrideUserInterfaceStyle (iOS)
+// with ScratchTheme; to follow the system, set it to nil.
+import SwiftUI
+#if canImport(AppKit)
+import AppKit
+public typealias ScratchPlatformColor = NSColor
+public typealias ScratchPlatformFont = NSFont
+#elseif canImport(UIKit)
+import UIKit
+public typealias ScratchPlatformColor = UIColor
+public typealias ScratchPlatformFont = UIFont
+#endif
+
+public struct ScratchRGBA {{
+    public let r: Double, g: Double, b: Double, a: Double
+    public init(_ r: Int, _ g: Int, _ b: Int, _ a: Double) {{
+        self.r = Double(r) / 255; self.g = Double(g) / 255; self.b = Double(b) / 255; self.a = a
+    }}
+}}
+
+/// The user's Theme setting: System · Paper · Night.
+public enum ScratchTheme: String, CaseIterable {{
+    case system, paper, night
+
+#if canImport(AppKit)
+    /// Value for NSApp.appearance. nil follows the system.
+    public var appearance: NSAppearance? {{
+        switch self {{
+        case .system: return nil
+        case .paper: return NSAppearance(named: .aqua)
+        case .night: return NSAppearance(named: .darkAqua)
+        }}
+    }}
+#endif
+#if canImport(UIKit)
+    public var userInterfaceStyle: UIUserInterfaceStyle {{
+        switch self {{
+        case .system: return .unspecified
+        case .paper: return .light
+        case .night: return .dark
+        }}
+    }}
+#endif
+}}
+
+/// One token: a Paper value and a Night value, resolved from the appearance at draw time.
+public struct ScratchColor {{
+    public let paper: ScratchRGBA
+    public let night: ScratchRGBA
+    public init(_ paper: ScratchRGBA, _ night: ScratchRGBA) {{ self.paper = paper; self.night = night }}
+
+    public var platform: ScratchPlatformColor {{
+        let paper = self.paper, night = self.night
+        func make(_ c: ScratchRGBA) -> ScratchPlatformColor {{
+            ScratchPlatformColor(red: c.r, green: c.g, blue: c.b, alpha: c.a)
+        }}
+#if canImport(AppKit)
+        return NSColor(name: nil) {{ appearance in
+            appearance.bestMatch(from: [.aqua, .darkAqua]) == .darkAqua ? make(night) : make(paper)
+        }}
+#else
+        return UIColor {{ traits in traits.userInterfaceStyle == .dark ? make(night) : make(paper) }}
+#endif
+    }}
+
+    public var color: Color {{
+#if canImport(AppKit)
+        return Color(nsColor: platform)
+#else
+        return Color(uiColor: platform)
+#endif
+    }}
+}}
+
+public enum ScratchTokens {{
+{ccases}
+
+    /** Scratch (SS-03) instrument: its accent and the two grounds tinted from it. */
+    public static let accent = scratchAccent
+    public static let selection = scratchSelection
+    public static let chartFill = scratchChartFill
+}}
+
+/// PostScript names of the bundled font files, by weight.
+public enum ScratchFonts {{
+{fam_sw}
+}}
+
+public struct ScratchTextStyle {{
+    public let face: String
+    public let size: CGFloat
+    public let lineHeight: CGFloat
+    public let tracking: CGFloat
+    public var platformFont: ScratchPlatformFont {{
+        ScratchPlatformFont(name: face, size: size) ?? ScratchPlatformFont.systemFont(ofSize: size)
+    }}
+    public var font: Font {{ Font.custom(face, fixedSize: size) }}
+}}
+
+public enum ScratchType {{
+{chr(10).join(sw_styles)}
+}}
+
+public enum ScratchSpace {{
+{sp_sw}
+}}
+
+public enum ScratchRadius {{
+{rd_sw}
+}}
+'''
+os.makedirs(os.path.join(ROOT,'exports','swift'),exist_ok=True)
+open(os.path.join(ROOT,'exports','swift','ScratchTokens.swift'),'w').write(swift)
+print(len(swift))
