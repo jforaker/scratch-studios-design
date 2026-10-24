@@ -19,7 +19,7 @@ export const colors = {
     ground: "#F6F5F1",
     /** Raised layer: Card on paper, Graphite on night (sidebars). Separated from ground by a ground shift and a hairline, never a shadow. */
     raised: "#FCFBF8",
-    /** Recessed track behind a segmented control or stepper. The selected segment sits on raised. */
+    /** Recessed track behind a segmented control or stepper, a step below the ground. The selected segment sits on raised. */
     track: "#EDEAE3",
     /** Primary text, headings and numerals. 16.6:1 on paper, 15.7:1 on night. */
     ink: "#161616",
@@ -67,8 +67,8 @@ export const colors = {
     ground: "#111110",
     /** Raised layer: Card on paper, Graphite on night (sidebars). Separated from ground by a ground shift and a hairline, never a shadow. */
     raised: "#1C1C1A",
-    /** Recessed track behind a segmented control or stepper. The selected segment sits on raised. */
-    track: "#1C1C1A",
+    /** Recessed track behind a segmented control or stepper, a step below the ground. The selected segment sits on raised. */
+    track: "#0B0B0A",
     /** Primary text, headings and numerals. 16.6:1 on paper, 15.7:1 on night. */
     ink: "#ECEAE4",
     /** Secondary text: descriptions, units beside a numeral, inactive segments. 8.4:1 on paper, 8.9:1 on night. */

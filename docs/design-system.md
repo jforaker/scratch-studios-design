@@ -92,7 +92,7 @@ Each card shows the component in the instrument and ground it comes from. Swap t
 - **Chart**: 1px accent line over a dot grid, fill fading to nothing, optional window band, labels outside the plot.
 - **Verdict**: dots plus word; live dot; progress ticks.
 - **Ring button**: the reading's start and stop. A 1px ring with a centre dot, never a filled disc.
-- **Pills**: place pickers. The selected pill is ink-filled (neutral), the rest outlined.
+- **Pills**: place pickers in one scrolling row. The selected pill sits on the selection ground; the rest are outlined in `rule-strong`.
 - **Settings row**: label and description left, control right; segmented controls sit in a track.
 
 ## Layout
