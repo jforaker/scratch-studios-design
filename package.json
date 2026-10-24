@@ -1,6 +1,6 @@
 {
   "name": "@scratch-studios/design",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": true,
   "description": "Scratch Studios design tokens and exports",
   "main": "exports/react-native/tokens.ts",
