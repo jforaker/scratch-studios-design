@@ -66,8 +66,6 @@ Three voices and a mark:
 3. **Numerals** measure: light, never bold. Break reads in Barlow Light 300 (`numeral-xl`); Trace measures in Plex Mono 300 (`numeral-mono`).
 4. **Mark**: Cutive Mono, a typewriter face, sets the wordmarks (BREAK, TRACE, SCRATCH, GAUGE, SCRATCH STUDIOS) and nothing else. Caps, tracked +0.42 em, one weight. Never in tab bars, labels, headers or body.
 
-Courier Prime (`personal`) is only an optional editor font in Scratch's settings. Never in marks, labels, numerals or marketing.
-
 Wordmarks are typed, not drawn: Cutive Mono caps with a Plex Mono descriptor at about 2/5 size (SURF CONDITIONS, NETWORK ANALYZER, FAST NOTES, AI USAGE) and "by Scratch Studios". The only accent on a mark is its status dot.
 
 Each instrument carries a model number, set in label mono beside the mark and on the About screen: **SS-01** Break, **SS-02** Trace, **SS-03** Scratch, **SS-04** Gauge. New instruments take the next number; numbers are never reused.
