@@ -1,4 +1,4 @@
-# SS-04 Gauge · Ticks
+# SC-04 Gauge · Ticks
 
 Gauge's own reading made into the mark: twelve ticks between two hairline rules, the spent ones dimmed, and a dot over the leading tick.
 

@@ -30,7 +30,7 @@ space='\n'.join(f"  {x['name'].split('-')[1]}: {num(x['value'])}, // {x['usage']
 radius='\n'.join(f"  {x['name'].split('-')[1]}: {num(x['value'])}, // {x['usage']}" for x in t['radius']['tokens'])
 facelines='\n'.join(f"  {k}: {{ "+', '.join(f"{w}: {q(n)}" for w,n in v.items())+" },"  for k,v in faces.items())
 out=f'''/**
- * Scratch Studios Design System — tokens for React Native.
+ * Small Currents Design System — tokens for React Native.
  * Generated from tokens.json (v{t['version']}). Do not edit by hand: change the design system, then regenerate.
  *
  * Type: Barlow (grotesk), IBM Plex Mono (labels, Trace numerals), Cutive Mono (wordmarks only).\n * Paper is the light theme, Night the dark theme. Every color has a value for each.
@@ -57,10 +57,10 @@ export type ThemeColors = {{ [K in ColorToken]: string }};
 
 /** Each instrument owns one accent and the two grounds tinted from it. */
 export const instruments = {{
-  break: {{ model: 'SS-01', accent: 'nominal', selection: 'nominalSelection', chartFill: 'nominalChartFill' }},
-  trace: {{ model: 'SS-02', accent: 'phosphor', selection: 'phosphorSelection', chartFill: 'phosphorChartFill' }},
-  scratch: {{ model: 'SS-03', accent: 'scratchAccent', selection: 'scratchSelection', chartFill: 'scratchChartFill' }},
-  gauge: {{ model: 'SS-04', accent: 'gaugeAccent', selection: 'gaugeSelection', chartFill: 'gaugeChartFill' }},
+  break: {{ model: 'SC-01', accent: 'nominal', selection: 'nominalSelection', chartFill: 'nominalChartFill' }},
+  trace: {{ model: 'SC-02', accent: 'phosphor', selection: 'phosphorSelection', chartFill: 'phosphorChartFill' }},
+  scratch: {{ model: 'SC-03', accent: 'scratchAccent', selection: 'scratchSelection', chartFill: 'scratchChartFill' }},
+  gauge: {{ model: 'SC-04', accent: 'gaugeAccent', selection: 'gaugeSelection', chartFill: 'gaugeChartFill' }},
 }} as const satisfies Record<string, {{ model: string; accent: ColorToken; selection: ColorToken; chartFill: ColorToken }}>;
 
 export type Instrument = keyof typeof instruments;
@@ -150,7 +150,7 @@ for g in t['type']['groups']:
 fam_sw='\n'.join(f"    public static let {k}: [Int: String] = [" + ', '.join(f"{w}: {q(n)}" for w,n in v.items()) + "]" for k,v in faces.items())
 sp_sw='\n'.join(f"    public static let s{x['name'].split('-')[1]}: CGFloat = {num(x['value'])} // {x['usage']}" for x in t['spacing']['tokens'])
 rd_sw='\n'.join(f"    public static let {x['name'].split('-')[1]}: CGFloat = {num(x['value'])} // {x['usage']}" for x in t['radius']['tokens'])
-swift=f'''// Scratch Studios Design System — tokens for Swift (AppKit, UIKit, SwiftUI).
+swift=f'''// Small Currents Design System — tokens for Swift (AppKit, UIKit, SwiftUI).
 // Generated from tokens.json (v{t['version']}). Do not edit by hand: change the design system, then regenerate.
 //
 // Colors are dynamic: they resolve Paper or Night from the effective appearance.
@@ -231,7 +231,7 @@ public struct ScratchColor {{
 public enum ScratchTokens {{
 {ccases}
 
-    /** Scratch (SS-03) instrument: its accent and the two grounds tinted from it. */
+    /** Scratch (SC-03) instrument: its accent and the two grounds tinted from it. */
     public static let accent = scratchAccent
     public static let selection = scratchSelection
     public static let chartFill = scratchChartFill

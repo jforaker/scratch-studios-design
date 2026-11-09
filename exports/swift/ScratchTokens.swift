@@ -1,4 +1,4 @@
-// Scratch Studios Design System — tokens for Swift (AppKit, UIKit, SwiftUI).
+// Small Currents Design System — tokens for Swift (AppKit, UIKit, SwiftUI).
 // Generated from tokens.json (v4). Do not edit by hand: change the design system, then regenerate.
 //
 // Colors are dynamic: they resolve Paper or Night from the effective appearance.
@@ -130,7 +130,7 @@ public enum ScratchTokens {
     /** Text selection on studio surfaces only. */
     public static let surveyWash = ScratchColor(ScratchRGBA(219, 221, 228, 1), ScratchRGBA(42, 48, 66, 1))
 
-    /** Scratch (SS-03) instrument: its accent and the two grounds tinted from it. */
+    /** Scratch (SC-03) instrument: its accent and the two grounds tinted from it. */
     public static let accent = scratchAccent
     public static let selection = scratchSelection
     public static let chartFill = scratchChartFill
