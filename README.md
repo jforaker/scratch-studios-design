@@ -1,6 +1,6 @@
-# Scratch Studios Design
+# Small Currents Design
 
-The design system for Scratch Studios' four instruments: SS-01 Break, SS-02 Trace, SS-03 Scratch and SS-04 Gauge. Quiet, instrument-like software that looks like a well-made field notebook.
+The design system for Small Currents' four instruments: SC-01 Break, SC-02 Trace, SC-03 Scratch and SC-04 Gauge. Quiet, instrument-like software that looks like a well-made field notebook.
 
 ## What's here
 | Path | What |
@@ -34,4 +34,4 @@ The fonts are bundled in each app, not here. All three are under the SIL Open Fo
 `style-guide/index.html` runs as is on any static host (GitHub Pages, Netlify, Cloudflare Pages). Its fonts and images are embedded in the page.
 
 ## Mirrors
-The same system lives as two claude.ai artifacts: **Scratch Studios Design System** and **Scratch Studios Style Guide**. When values change, update this repo and the artifact together so they don't drift.
+The same system lives as two claude.ai artifacts: **Small Currents Design System** and **Small Currents Style Guide**. When values change, update this repo and the artifact together so they don't drift.

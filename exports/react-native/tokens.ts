@@ -1,5 +1,5 @@
 /**
- * Scratch Studios Design System — tokens for React Native.
+ * Small Currents Design System — tokens for React Native.
  * Generated from tokens.json (v4). Do not edit by hand: change the design system, then regenerate.
  *
  * Type: Barlow (grotesk), IBM Plex Mono (labels, Trace numerals), Cutive Mono (wordmarks only).
@@ -129,10 +129,10 @@ export type ThemeColors = { [K in ColorToken]: string };
 
 /** Each instrument owns one accent and the two grounds tinted from it. */
 export const instruments = {
-  break: { model: 'SS-01', accent: 'nominal', selection: 'nominalSelection', chartFill: 'nominalChartFill' },
-  trace: { model: 'SS-02', accent: 'phosphor', selection: 'phosphorSelection', chartFill: 'phosphorChartFill' },
-  scratch: { model: 'SS-03', accent: 'scratchAccent', selection: 'scratchSelection', chartFill: 'scratchChartFill' },
-  gauge: { model: 'SS-04', accent: 'gaugeAccent', selection: 'gaugeSelection', chartFill: 'gaugeChartFill' },
+  break: { model: 'SC-01', accent: 'nominal', selection: 'nominalSelection', chartFill: 'nominalChartFill' },
+  trace: { model: 'SC-02', accent: 'phosphor', selection: 'phosphorSelection', chartFill: 'phosphorChartFill' },
+  scratch: { model: 'SC-03', accent: 'scratchAccent', selection: 'scratchSelection', chartFill: 'scratchChartFill' },
+  gauge: { model: 'SC-04', accent: 'gaugeAccent', selection: 'gaugeSelection', chartFill: 'gaugeChartFill' },
 } as const satisfies Record<string, { model: string; accent: ColorToken; selection: ColorToken; chartFill: ColorToken }>;
 
 export type Instrument = keyof typeof instruments;
@@ -157,7 +157,7 @@ export const type = {
     numeralMono: { fontFamily: fontFaces.mono[300], fontSize: 56, lineHeight: 56, letterSpacing: -1.12 },
     /** Grotesk · Screen titles. */
     title: { fontFamily: fontFaces.grotesk[400], fontSize: 36, lineHeight: 41, letterSpacing: 0 },
-    /** Grotesk · Wordmarks only: Break, Trace, Scratch, Gauge, Scratch Studios. Cutive Mono caps, tracked. Never in UI chrome. */
+    /** Grotesk · Wordmarks only: Break, Trace, Scratch, Gauge, Small Currents. Cutive Mono caps, tracked. Never in UI chrome. */
     mark: { fontFamily: fontFaces.mark[400], fontSize: 24, lineHeight: 24, letterSpacing: 10.08 },
     /** Grotesk · Place names and pills: Barlow Medium caps. */
     place: { fontFamily: fontFaces.grotesk[500], fontSize: 18, lineHeight: 22, letterSpacing: 2.52 },

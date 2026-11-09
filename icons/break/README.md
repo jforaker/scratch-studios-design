@@ -1,4 +1,4 @@
-# Break app icon: Peel (SS-01)
+# Break app icon: Peel (SC-01)
 
 Three swell lines wrapping a point, peeling right into the bay. The kelp dot is the rock at the point and the mark's one accent. Break uses the dark icon in every appearance.
 

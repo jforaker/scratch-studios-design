@@ -1,4 +1,4 @@
-# Scratch Studios
+# Small Currents
 
 Quiet, instrument-like software that looks like a well-made field notebook. Calm, precise, analog, never flashy.
 
@@ -6,7 +6,7 @@ One shared language for four instruments: **Break** (surf conditions), **Trace**
 
 If it could belong in a well-kept field station, a darkroom, a lab notebook, or a 1980s precision instrument redesigned by a modern Apple team, it is on target. Benchmarks: Braun, Tektronix and HP bench instruments, NASA mission control, Apple Hardware Test, field notebooks.
 
-This system holds the values and rules that code reads. The *Scratch Studios Style Guide* is the editorial companion; when a value changes, it changes here first.
+This system holds the values and rules that code reads. The *Small Currents Style Guide* is the editorial companion; when a value changes, it changes here first.
 
 ## Principles
 
@@ -64,11 +64,11 @@ Three voices and a mark:
 1. **Grotesk** speaks: Barlow for headings, body and place names. It was drawn from California road signs and license plates: slightly narrow, softly finished, built to be read at a glance.
 2. **Label mono** labels: IBM Plex Mono for labels, units, metadata and tab bars. Always caps, always tracked +0.16 em.
 3. **Numerals** measure: light, never bold. Break reads in Barlow Light 300 (`numeral-xl`); Trace measures in Plex Mono 300 (`numeral-mono`).
-4. **Mark**: Cutive Mono, a typewriter face, sets the wordmarks (BREAK, TRACE, SCRATCH, GAUGE, SCRATCH STUDIOS) and nothing else. Caps, tracked +0.42 em, one weight. Never in tab bars, labels, headers or body.
+4. **Mark**: Cutive Mono, a typewriter face, sets the wordmarks (BREAK, TRACE, SCRATCH, GAUGE, SMALL CURRENTS) and nothing else. Caps, tracked +0.42 em, one weight. Never in tab bars, labels, headers or body.
 
-Wordmarks are typed, not drawn: Cutive Mono caps with a Plex Mono descriptor at about 2/5 size (SURF CONDITIONS, NETWORK ANALYZER, FAST NOTES, AI USAGE) and "by Scratch Studios". The only accent on a mark is its status dot.
+Wordmarks are typed, not drawn: Cutive Mono caps with a Plex Mono descriptor at about 2/5 size (SURF CONDITIONS, NETWORK ANALYZER, FAST NOTES, AI USAGE) and "by Small Currents". The only accent on a mark is its status dot.
 
-Each instrument carries a model number, set in label mono beside the mark and on the About screen: **SS-01** Break, **SS-02** Trace, **SS-03** Scratch, **SS-04** Gauge. New instruments take the next number; numbers are never reused.
+Each instrument carries a model number, set in label mono beside the mark and on the About screen: **SC-01** Break, **SC-02** Trace, **SC-03** Scratch, **SC-04** Gauge. New instruments take the next number; numbers are never reused.
 
 ## App icons
 
@@ -78,10 +78,10 @@ Each instrument's icon rereads one familiar shape, built the same way:
 - Three lines.
 - One dot in the instrument's accent.
 
-- **SS-01 Break: Peel.** Swell lines wrapping a point, peeling right. Graphite ground, chalk lines, `nominal` dot. Break uses this one icon in every appearance.
-- **SS-02 Trace: Signal.** Wifi arcs cut like a section drawing. Paper ground, graphite arcs. The dot should be `phosphor`.
-- **SS-03 Scratch: Stroke.** One quick stroke of ink on paper. It has no dot: the stroke is the mark.
-- **SS-04 Gauge: Ticks.** Gauge's own reading turned into the mark: twelve ticks between two hairline rules, the spent ones in `sand`, the leading tick and a dot above it in `gauge-accent`. Night ground.
+- **SC-01 Break: Peel.** Swell lines wrapping a point, peeling right. Graphite ground, chalk lines, `nominal` dot. Break uses this one icon in every appearance.
+- **SC-02 Trace: Signal.** Wifi arcs cut like a section drawing. Paper ground, graphite arcs. The dot should be `phosphor`.
+- **SC-03 Scratch: Stroke.** One quick stroke of ink on paper. It has no dot: the stroke is the mark.
+- **SC-04 Gauge: Ticks.** Gauge's own reading turned into the mark: twelve ticks between two hairline rules, the spent ones in `sand`, the leading tick and a dot above it in `gauge-accent`. Night ground.
 
 ### Menu-bar items
 
@@ -126,3 +126,4 @@ Say what the instrument sees. Numbers before adjectives. Sentence case, full sto
 
 - Studio mark: square-with-slash glyph versus type-only wordmark is unconfirmed.
 - `survey-wash` on night is proposed and unused so far.
+- The studio is now Small Currents and model numbers are SC-01 to SC-04. The repo (`scratch-studios-design`), package (`@scratch-studios/design`) and Swift file (`ScratchTokens.swift`) keep their old names for now so existing imports keep working.
