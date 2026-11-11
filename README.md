@@ -12,6 +12,7 @@ The design system for Small Currents' four instruments: SC-01 Break, SC-02 Trace
 | `docs/design-system.md`          | The rules: color, verdicts, state grounds, type, marks, app icons, layout and voice.                                           |
 | `components/`                    | Seven component specs (`README.md`) with HTML previews: Reading, Navigation, Chart, Verdict, Ring button, Pills, Settings row. |
 | `exports/react-native/tokens.ts` | Generated for the apps. **Don't edit it by hand.**                                                                             |
+| `exports/css/tokens.css`         | Generated CSS custom properties for web projects. **Don't edit it by hand.**                                                   |
 | `scripts/generate-tokens.py`     | Regenerates the export from `tokens.json`.                                                                                     |
 | `icons/break/`                   | Break's Peel icon: the iOS 1024 icon, Icon Composer layers and Android mipmaps.                                                |
 | `icons/trace/`                   | Trace's Signal icon (reference PNG).                                                                                           |
@@ -23,10 +24,16 @@ The design system for Small Currents' four instruments: SC-01 Break, SC-02 Trace
 
 1. Edit `tokens/tokens.json`.
 2. Run `python3 scripts/generate-tokens.py`.
-   This writes both `exports/react-native/tokens.ts` and `exports/swift/ScratchTokens.swift`. Never edit either by hand.
+   This writes the React Native, CSS and Swift exports. Never edit the generated files by hand.
 3. Update `docs/design-system.md` if a rule changed.
 4. Bump `version` in `package.json`, merge, and tag the release to match (`v1.6.0`).
 5. In each app, bump the `small-currents-design` dependency to the new tag. When migrating from `@scratch-studios/design`, also update imports and any native file references into `node_modules`.
+
+## CSS colors
+
+Import `small-currents-design/css` (or `small-currents-design/tokens.css`) to use every color as a semantic custom property: `--ground`, `--raised`, `--track`, `--ink`, `--ink-soft`, `--label`, `--rule`, `--rule-strong`, `--sand`, `--nominal`, `--nominal-selection`, `--nominal-chart-fill`, `--phosphor`, `--phosphor-selection`, `--phosphor-chart-fill`, `--scratch-accent`, `--scratch-selection`, `--scratch-chart-fill`, `--gauge-accent`, `--gauge-selection`, `--gauge-chart-fill`, `--window`, `--ochre`, `--clay`, `--survey`, and `--survey-wash`.
+
+The stylesheet defaults to Paper. Add `data-theme="night"` (or `data-theme="dark"`) to any element to switch it and its descendants to Night; `paper` and `light` are also supported.
 
 ## Fonts
 

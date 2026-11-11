@@ -126,6 +126,41 @@ open(os.path.join(ROOT,'exports','react-native','tokens.ts'),'w').write(out)
 print(len(out))
 
 # ---------------------------------------------------------------------------
+# Web export: CSS custom properties from the same tokens.json source.
+# `:root` defaults to Paper. Set data-theme="night" (or "dark") on any
+# container to switch that subtree; "paper" and "light" are explicit aliases.
+# ---------------------------------------------------------------------------
+def css_theme(th):
+    lines=[]
+    for x in toks:
+        v=x['value']; v=v if isinstance(v,str) else v[th]
+        lines.append(f"  /* {x['usage']} */\n  --{x['name']}: {v};")
+    return '\n'.join(lines)
+
+css=f'''/**
+ * Small Currents Design System — CSS color tokens.
+ * Generated from tokens.json (v{t['version']}). Do not edit by hand: change
+ * the design system, then run `python3 scripts/generate-tokens.py`.
+ *
+ * Defaults to Paper. Apply data-theme="night" or data-theme="dark" to any
+ * element to switch that element and its descendants to Night.
+ */
+:root,
+[data-theme="paper"],
+[data-theme="light"] {{
+{css_theme('light')}
+}}
+
+[data-theme="night"],
+[data-theme="dark"] {{
+{css_theme('dark')}
+}}
+'''
+os.makedirs(os.path.join(ROOT,'exports','css'),exist_ok=True)
+open(os.path.join(ROOT,'exports','css','tokens.css'),'w').write(css)
+print(len(css))
+
+# ---------------------------------------------------------------------------
 # Native export: Swift (AppKit + UIKit + SwiftUI) from the same tokens.json.
 # ---------------------------------------------------------------------------
 def rgba(v):

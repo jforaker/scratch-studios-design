@@ -1,0 +1,120 @@
+/**
+ * Small Currents Design System — CSS color tokens.
+ * Generated from tokens.json (v4). Do not edit by hand: change
+ * the design system, then run `python3 scripts/generate-tokens.py`.
+ *
+ * Defaults to Paper. Apply data-theme="night" or data-theme="dark" to any
+ * element to switch that element and its descendants to Night.
+ */
+:root,
+[data-theme="paper"],
+[data-theme="light"] {
+  /* Page ground. Paper by day, Night by night. */
+  --ground: #F6F5F1;
+  /* Raised layer: Card on paper, Graphite on night (sidebars). Separated from ground by a ground shift and a hairline, never a shadow. */
+  --raised: #FCFBF8;
+  /* Recessed track behind a segmented control or stepper, a step below the ground. The selected segment sits on raised. */
+  --track: #EDEAE3;
+  /* Primary text, headings and numerals. 16.6:1 on paper, 15.7:1 on night. */
+  --ink: #161616;
+  /* Secondary text: descriptions, units beside a numeral, inactive segments. 8.4:1 on paper, 8.9:1 on night. */
+  --ink-soft: #4A4843;
+  /* Mono labels and metadata (Stone on paper, Ash on night). 4.5:1 and 5.5:1: small caps labels only, never body text. */
+  --label: #73706A;
+  /* 1px hairlines between rows, blocks and panels. Full rules divide; partial edges never highlight. */
+  --rule: rgba(22, 22, 22, 0.12);
+  /* 1px outline of a control: pills, secondary buttons, steppers, the edges of a window. */
+  --rule-strong: rgba(22, 22, 22, 0.20);
+  /* Idle marks: empty rating dots, unfilled progress ticks. */
+  --sand: #D8D3C9;
+  /* Kelp. Break's instrument accent: chart line, live dot, the status dot on the mark, and 'good' on Break's verdicts. Text, 1px lines and dots only. 5.5:1 on paper, 7.9:1 on night. */
+  --nominal: #4C6A55;
+  /* Selected row or cell ground in Break. Never an edge highlight. */
+  --nominal-selection: #E8EAE5;
+  /* Peak of the chart fade under a nominal line. Fades to nothing at the baseline. */
+  --nominal-chart-fill: #D4D9D2;
+  /* Olive phosphor, after a P1 scope trace. Trace's instrument accent: chart line, sparklines, live dot, progress ticks, and 'good' on Trace's verdicts. 5.4:1 on paper, 9.7:1 on night. */
+  --phosphor: #5C6B24;
+  /* Selected row or nav item ground in Trace. Never an edge highlight. */
+  --phosphor-selection: #EAEAE1;
+  /* Peak of the chart fade under a phosphor line. */
+  --phosphor-chart-fill: #D7D9C8;
+  /* Cyanotype. Scratch's accent: links, cursor, current state. 7.0:1 on paper, 8.1:1 on night. */
+  --scratch-accent: #2F5872;
+  /* Selected note or row ground in Scratch. Never an edge highlight. */
+  --scratch-selection: #E6E8E7;
+  /* Peak of the chart fade under a cyanotype line. */
+  --scratch-chart-fill: #CED6D8;
+  /* Slate. Gauge's instrument accent: filled ticks when the verdict is good, the live dot, the status dot on the mark, and the menu-bar dot when nothing is low. 6.7:1 on paper, 8.4:1 on night. */
+  --gauge-accent: #4A5866;
+  /* Selected or hovered row ground in Gauge. Never an edge highlight. */
+  --gauge-selection: #E7E8E8;
+  /* Peak of the chart fade under a slate line. */
+  --gauge-chart-fill: #D3D7DB;
+  /* Ground of a marked span: Break's best window, Trace's test interval, a found match in Scratch. Always bounded by a rule-strong hairline at each edge; labels sit outside it. */
+  --window: #E7E4DD;
+  /* Verdict 'fair' in every instrument. 5.6:1 on paper, 6.5:1 on night. */
+  --ochre: #7C5D29;
+  /* Verdict 'poor', the Stop ring, and the only signal for a destructive action (clay text, never a red panel). 4.9:1 on paper, 6.4:1 on night. */
+  --clay: #A0583F;
+  /* Studio accent. Studio surfaces only (site, guide), never inside an app. 7.6:1 on paper, 8.8:1 on night. */
+  --survey: #334A94;
+  /* Text selection on studio surfaces only. */
+  --survey-wash: #DBDDE4;
+}
+
+[data-theme="night"],
+[data-theme="dark"] {
+  /* Page ground. Paper by day, Night by night. */
+  --ground: #111110;
+  /* Raised layer: Card on paper, Graphite on night (sidebars). Separated from ground by a ground shift and a hairline, never a shadow. */
+  --raised: #1C1C1A;
+  /* Recessed track behind a segmented control or stepper, a step below the ground. The selected segment sits on raised. */
+  --track: #0B0B0A;
+  /* Primary text, headings and numerals. 16.6:1 on paper, 15.7:1 on night. */
+  --ink: #ECEAE4;
+  /* Secondary text: descriptions, units beside a numeral, inactive segments. 8.4:1 on paper, 8.9:1 on night. */
+  --ink-soft: #B5B2AA;
+  /* Mono labels and metadata (Stone on paper, Ash on night). 4.5:1 and 5.5:1: small caps labels only, never body text. */
+  --label: #8C8A84;
+  /* 1px hairlines between rows, blocks and panels. Full rules divide; partial edges never highlight. */
+  --rule: rgba(255, 255, 255, 0.10);
+  /* 1px outline of a control: pills, secondary buttons, steppers, the edges of a window. */
+  --rule-strong: rgba(255, 255, 255, 0.20);
+  /* Idle marks: empty rating dots, unfilled progress ticks. */
+  --sand: #3A3935;
+  /* Kelp. Break's instrument accent: chart line, live dot, the status dot on the mark, and 'good' on Break's verdicts. Text, 1px lines and dots only. 5.5:1 on paper, 7.9:1 on night. */
+  --nominal: #93AE98;
+  /* Selected row or cell ground in Break. Never an edge highlight. */
+  --nominal-selection: #212420;
+  /* Peak of the chart fade under a nominal line. Fades to nothing at the baseline. */
+  --nominal-chart-fill: #2B302B;
+  /* Olive phosphor, after a P1 scope trace. Trace's instrument accent: chart line, sparklines, live dot, progress ticks, and 'good' on Trace's verdicts. 5.4:1 on paper, 9.7:1 on night. */
+  --phosphor: #B3C07A;
+  /* Selected row or nav item ground in Trace. Never an edge highlight. */
+  --phosphor-selection: #24261D;
+  /* Peak of the chart fade under a phosphor line. */
+  --phosphor-chart-fill: #313425;
+  /* Cyanotype. Scratch's accent: links, cursor, current state. 7.0:1 on paper, 8.1:1 on night. */
+  --scratch-accent: #8EAEC4;
+  /* Selected note or row ground in Scratch. Never an edge highlight. */
+  --scratch-selection: #202426;
+  /* Peak of the chart fade under a cyanotype line. */
+  --scratch-chart-fill: #2A3034;
+  /* Slate. Gauge's instrument accent: filled ticks when the verdict is good, the live dot, the status dot on the mark, and the menu-bar dot when nothing is low. 6.7:1 on paper, 8.4:1 on night. */
+  --gauge-accent: #9AAFC6;
+  /* Selected or hovered row ground in Gauge. Never an edge highlight. */
+  --gauge-selection: #212326;
+  /* Peak of the chart fade under a slate line. */
+  --gauge-chart-fill: #2A2F34;
+  /* Ground of a marked span: Break's best window, Trace's test interval, a found match in Scratch. Always bounded by a rule-strong hairline at each edge; labels sit outside it. */
+  --window: #24221E;
+  /* Verdict 'fair' in every instrument. 5.6:1 on paper, 6.5:1 on night. */
+  --ochre: #B29362;
+  /* Verdict 'poor', the Stop ring, and the only signal for a destructive action (clay text, never a red panel). 4.9:1 on paper, 6.4:1 on night. */
+  --clay: #C5876F;
+  /* Studio accent. Studio surfaces only (site, guide), never inside an app. 7.6:1 on paper, 8.8:1 on night. */
+  --survey: #A0B1DB;
+  /* Text selection on studio surfaces only. */
+  --survey-wash: #2A3042;
+}

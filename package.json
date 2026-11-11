@@ -7,6 +7,8 @@
   "types": "exports/react-native/tokens.ts",
   "exports": {
     ".": "./exports/react-native/tokens.ts",
+    "./css": "./exports/css/tokens.css",
+    "./tokens.css": "./exports/css/tokens.css",
     "./tokens.json": "./tokens/tokens.json",
     "./*": "./*"
   },
