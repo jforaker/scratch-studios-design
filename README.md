@@ -44,3 +44,7 @@ The fonts are bundled in each app, not here. All three are under the SIL Open Fo
 
 The same system lives as two claude.ai artifacts:
 **Small Currents Design System** and **Small Currents Style Guide**. When values change, update this repo and the artifact together so they don't drift.
+
+## Swift Package Manager
+
+Add `https://github.com/jforaker/small-currents-design.git` as a versioned Swift package dependency (starting with v1.7.2), then add the `SmallCurrentsDesign` library product to your target. Import `SmallCurrentsDesign` to use the generated `ScratchTokens`, `ScratchType`, and related public types. Commit your app's `Package.resolved` so builds use the same revision. SwiftPM fetches the tokens automatically; no sibling checkout is required. Fonts remain bundled by each app.
