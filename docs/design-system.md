@@ -126,4 +126,4 @@ Say what the instrument sees. Numbers before adjectives. Sentence case, full sto
 
 - Studio mark: square-with-slash glyph versus type-only wordmark is unconfirmed.
 - `survey-wash` on night is proposed and unused so far.
-- The studio is now Small Currents and model numbers are SC-01 to SC-04. The repo (`scratch-studios-design`), package (`@scratch-studios/design`) and Swift file (`ScratchTokens.swift`) keep their old names for now so existing imports keep working.
+- The studio is now Small Currents and model numbers are SC-01 to SC-04. As of v1.7.1, the repo and package are named `small-currents-design`. Consumers migrating from `@scratch-studios/design` must update their dependency key, imports, and native paths into `node_modules`. The Swift file remains `ScratchTokens.swift`.

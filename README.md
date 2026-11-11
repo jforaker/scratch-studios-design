@@ -26,7 +26,7 @@ The design system for Small Currents' four instruments: SC-01 Break, SC-02 Trace
    This writes both `exports/react-native/tokens.ts` and `exports/swift/ScratchTokens.swift`. Never edit either by hand.
 3. Update `docs/design-system.md` if a rule changed.
 4. Bump `version` in `package.json`, merge, and tag the release to match (`v1.6.0`).
-5. In each app, bump the `@scratch-studios/design` dependency to the new tag.
+5. In each app, bump the `small-currents-design` dependency to the new tag. When migrating from `@scratch-studios/design`, also update imports and any native file references into `node_modules`.
 
 ## Fonts
 
