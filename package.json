@@ -1,6 +1,6 @@
 {
   "name": "small-currents-design",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "private": true,
   "description": "Small Currents design tokens and exports",
   "main": "exports/react-native/tokens.ts",

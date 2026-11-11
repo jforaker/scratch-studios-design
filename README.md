@@ -33,6 +33,8 @@ The design system for Small Currents' four instruments: SC-01 Break, SC-02 Trace
 
 Import `small-currents-design/css` (or `small-currents-design/tokens.css`) to use every color as a semantic custom property: `--ground`, `--raised`, `--track`, `--ink`, `--ink-soft`, `--label`, `--rule`, `--rule-strong`, `--sand`, `--nominal`, `--nominal-selection`, `--nominal-chart-fill`, `--phosphor`, `--phosphor-selection`, `--phosphor-chart-fill`, `--scratch-accent`, `--scratch-selection`, `--scratch-chart-fill`, `--gauge-accent`, `--gauge-selection`, `--gauge-chart-fill`, `--window`, `--ochre`, `--clay`, `--survey`, and `--survey-wash`.
 
+The guide's color names are available too. Fixed colors use `--paper`, `--night`, `--card`, `--graphite`, `--chalk`, `--stone`, `--ash`, `--track-paper`, `--track-night`, `--ink-soft-paper`, `--ink-soft-night`, `--sand-paper`, and `--sand-night`. The theme-aware pigment aliases are `--kelp`, `--phosphor`, `--cyanotype`, `--slate`, `--ochre`, `--clay`, and `--survey`.
+
 The stylesheet defaults to Paper. Add `data-theme="night"` (or `data-theme="dark"`) to any element to switch it and its descendants to Night; `paper` and `light` are also supported.
 
 ## Fonts

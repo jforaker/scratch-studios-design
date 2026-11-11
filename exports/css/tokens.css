@@ -6,6 +6,23 @@
  * Defaults to Paper. Apply data-theme="night" or data-theme="dark" to any
  * element to switch that element and its descendants to Night.
  */
+:root {
+  /* Fixed color names from the style guide. */
+  --paper: #F6F5F1;
+  --card: #FCFBF8;
+  --night: #111110;
+  --graphite: #1C1C1A;
+  --chalk: #ECEAE4;
+  --stone: #73706A;
+  --ash: #8C8A84;
+  --track-paper: #EDEAE3;
+  --track-night: #0B0B0A;
+  --ink-soft-paper: #4A4843;
+  --ink-soft-night: #B5B2AA;
+  --sand-paper: #D8D3C9;
+  --sand-night: #3A3935;
+}
+
 :root,
 [data-theme="paper"],
 [data-theme="light"] {
@@ -61,6 +78,10 @@
   --survey: #334A94;
   /* Text selection on studio surfaces only. */
   --survey-wash: #DBDDE4;
+  /* Style-guide pigment aliases. These follow the active theme. */
+  --kelp: var(--nominal);
+  --cyanotype: var(--scratch-accent);
+  --slate: var(--gauge-accent);
 }
 
 [data-theme="night"],
@@ -117,4 +138,8 @@
   --survey: #A0B1DB;
   /* Text selection on studio surfaces only. */
   --survey-wash: #2A3042;
+  /* Style-guide pigment aliases. These follow the active theme. */
+  --kelp: var(--nominal);
+  --cyanotype: var(--scratch-accent);
+  --slate: var(--gauge-accent);
 }

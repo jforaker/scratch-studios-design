@@ -135,7 +135,35 @@ def css_theme(th):
     for x in toks:
         v=x['value']; v=v if isinstance(v,str) else v[th]
         lines.append(f"  /* {x['usage']} */\n  --{x['name']}: {v};")
+    lines.extend([
+        "  /* Style-guide pigment aliases. These follow the active theme. */",
+        "  --kelp: var(--nominal);",
+        "  --cyanotype: var(--scratch-accent);",
+        "  --slate: var(--gauge-accent);",
+    ])
     return '\n'.join(lines)
+
+def token_value(name, th):
+    x=next(x for x in toks if x['name']==name)
+    v=x['value']; return v if isinstance(v,str) else v[th]
+
+def css_guide_names():
+    names=[
+        ('paper', 'ground', 'light'),
+        ('card', 'raised', 'light'),
+        ('night', 'ground', 'dark'),
+        ('graphite', 'raised', 'dark'),
+        ('chalk', 'ink', 'dark'),
+        ('stone', 'label', 'light'),
+        ('ash', 'label', 'dark'),
+        ('track-paper', 'track', 'light'),
+        ('track-night', 'track', 'dark'),
+        ('ink-soft-paper', 'ink-soft', 'light'),
+        ('ink-soft-night', 'ink-soft', 'dark'),
+        ('sand-paper', 'sand', 'light'),
+        ('sand-night', 'sand', 'dark'),
+    ]
+    return '\n'.join(f"  --{css_name}: {token_value(token, th)};" for css_name,token,th in names)
 
 css=f'''/**
  * Small Currents Design System — CSS color tokens.
@@ -145,6 +173,11 @@ css=f'''/**
  * Defaults to Paper. Apply data-theme="night" or data-theme="dark" to any
  * element to switch that element and its descendants to Night.
  */
+:root {{
+  /* Fixed color names from the style guide. */
+{css_guide_names()}
+}}
+
 :root,
 [data-theme="paper"],
 [data-theme="light"] {{
