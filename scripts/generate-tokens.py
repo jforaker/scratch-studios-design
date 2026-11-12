@@ -194,6 +194,45 @@ open(os.path.join(ROOT,'exports','css','tokens.css'),'w').write(css)
 print(len(css))
 
 # ---------------------------------------------------------------------------
+# Web export: system-preference adapter. This is deliberately separate from
+# tokens.css so consumers can choose an explicit theme or follow the device.
+# All values come from the same source tokens above; web projects must not
+# duplicate a partial dark-theme override.
+# ---------------------------------------------------------------------------
+auto_css=f'''/**
+ * Small Currents Design System — automatic CSS color theme.
+ * Generated from tokens.json (v{t['version']}). Import this instead of
+ * `small-currents-design/css` when the document should follow the device.
+ *
+ * An explicit data-theme on :root still wins. Scoped data-theme values keep
+ * working for sections that intentionally differ from the page.
+ */
+@import './tokens.css';
+
+:root {{
+  color-scheme: light dark;
+}}
+
+:root[data-theme="paper"],
+:root[data-theme="light"] {{
+  color-scheme: light;
+}}
+
+:root[data-theme="night"],
+:root[data-theme="dark"] {{
+  color-scheme: dark;
+}}
+
+@media (prefers-color-scheme: dark) {{
+  :root:not([data-theme]) {{
+{css_theme('dark')}
+  }}
+}}
+'''
+open(os.path.join(ROOT,'exports','css','auto-theme.css'),'w').write(auto_css)
+print(len(auto_css))
+
+# ---------------------------------------------------------------------------
 # Native export: Swift (AppKit + UIKit + SwiftUI) from the same tokens.json.
 # ---------------------------------------------------------------------------
 def rgba(v):

@@ -37,6 +37,8 @@ The guide's color names are available too. Fixed colors use `--paper`, `--night`
 
 The stylesheet defaults to Paper. Add `data-theme="night"` (or `data-theme="dark"`) to any element to switch it and its descendants to Night; `paper` and `light` are also supported.
 
+For a CSS-only system theme, import `small-currents-design/auto.css` instead. It applies the complete Night token set under `prefers-color-scheme: dark`, while explicit `data-theme` values on the root or a subtree still win.
+
 ## Fonts
 
 The fonts are bundled in each app, not here. All three are under the SIL Open Font License, from the google/fonts repo:
